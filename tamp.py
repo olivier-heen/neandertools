@@ -35,23 +35,23 @@ if __name__ == '__main__':
         quit('tamp.py: the interval delimiter must be a single character.')
     if SEPA in '.1234567890':
         quit('tamp.py: the interval delimiter cannot be a dot or a digit.')
-    
+
     for l in stdi:
         line = l.strip()                                        # Line by line
-    
+
         try:
             NEXT = int(line)                                    # It's an int?
-            if INIT == None:                                    # Start interval
+            if INIT is None:                                    # Start interval
                 INIT = CURR = NEXT
             elif NEXT == CURR+1:                                # Grow interval
                 CURR = NEXT
             else:                                               # Stop interval
                 show(INIT, CURR)                                # Show interval
                 INIT = CURR = NEXT                              # Start another
-    
+
         except ValueError:                                      # It's interval?
-    
-            if INIT != None:                                    # Ongoing list?
+
+            if INIT is not None:                                # Ongoing list?
                 show(INIT, CURR)                                # Show list
                 INIT = CURR = NEXT = None                       # Stop list
             try:                                                # tamp interval?
@@ -60,8 +60,8 @@ if __name__ == '__main__':
                     print(step)
             except (ValueError, TypeError):                     # Can't tamp?
                 print(line)                                     # Don't change
-    
-    if INIT != None:                                            # Degenerate
+
+    if INIT is not None:                                        # Degenerate
         show(INIT, CURR)                                        # Just show
 
 ################################################################v###############
@@ -74,9 +74,4 @@ if __name__ == '__main__':
 ################################################################|###############
 #NICE
 #   Process negative numbers in intervals: -23--37  -37--23  11--13  -11-13.
-################################################################|###############
-#INPG
-################################################################|###############
-#DONE
 ################################################################^###############
-
