@@ -1,0 +1,33 @@
+This is example data for tamp.py.  Note that text lines are left unchanged, even if they contain numbers such as 1 2 3 4 or if they contain intervals such as 1912-1954.
+
+The list from 19 to 21 hereafter will be turned into an interval.
+19
+20
+21
+The list from 22 to 23 hereafter will be turned into an interval.
+22
+23
+Note that interval 22 to 23 is not mixed with the interval 19 to 21 ; this is because there is a text line between 21 and 22.
+
+Intervals are turned into lists. For instance 4-5 will expand as:
+4-5
+Reverse intervals are considered regular interval. 16-14 will expand as 14-16:
+16-14
+Decreasing sequences are not turned into intervals.
+4
+3
+2
+Negative numbers can appear in sequences. The sequence below will give -18--16.
+-18
+-17
+-16
+A sequence can start negative and finish positive. Such as -1 to 1.
+-1
+0
+1
+Intervals including negative numbers are not considered.
+-1-1
+-18--14
+16--32
+-8-4
+
