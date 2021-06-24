@@ -30,7 +30,7 @@ if __name__ == '__main__':
     INIT = CURR = NEXT = None
     INCL = lambda x, y: INCL(y, x) if x > y else range(x, y+1)  # Include bounds
     ARGS = args(__doc__)
-    SEPA = ARGS['-d'][0]
+    SEPA = ARGS['-d']
     if len(SEPA) > 1:
         quit('tamp.py: the interval delimiter must be a single character.')
     if SEPA in '.1234567890':
