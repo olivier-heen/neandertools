@@ -26,6 +26,7 @@ from sys import stdin as stdi
 import ipaddress
 from docopt import docopt as args
 
+
 # ##############################################################v##############
 def conv(line):
     '''Main conversion function.'''
@@ -44,6 +45,7 @@ def conv(line):
         except (ValueError, TypeError):                         # Unknown
             return line
 
+        
 # ##############################################################v##############
 if __name__ == "__main__":
     ARGS = args(__doc__)
