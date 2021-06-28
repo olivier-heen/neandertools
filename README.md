@@ -8,6 +8,7 @@ Use these tools for manual manipulation and for simple scripting. Do not use for
 - ``tamp.py`` Convert successive numbers to intervals. And vice-versa.
 - ``iton.py`` Convert IPv4 to decimal. And vice-versa. Also works on intervals.
 - ``cidr.py`` Convert cidr network range to addresse interval.  And vice-versa.
+- ``turn.py`` Turn a data table into its transpose or into vectors.
 
 Example: list unique IP addresses from a set of network ranges and intervals.
 ``cidr.py --range < test/example.01 | iton.py | tamp.py | sort -u | iton.py``
