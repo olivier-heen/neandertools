@@ -10,7 +10,7 @@ Use these tools for manual manipulation and for simple scripting. Do not use for
 - ``cidr.py`` Convert cidr network range to addresse interval.  And vice-versa.
 
 Example: list unique IP addresses from a set of network ranges and intervals.
-``cidr.py --range < test/example.test.01 | iton.py | tamp.py | sort -u | iton.py``
+``cidr.py --range < test/example.01 | iton.py | tamp.py | sort -u | iton.py``
 
 Example: normalize a given set of network ranges by correctly aligning the ranges, joinning consecutive ranges and removing doublons.
-``cidr.py --range < test/example.test.02 | iton.py | tamp.py | sort -u | tamp.py | iton.py | cidr.py``
+``cidr.py --range < test/example.02 | iton.py | tamp.py | sort -u | tamp.py | iton.py | cidr.py``
