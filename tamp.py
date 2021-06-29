@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 # ##############################################################v##############
 '''Convert successive numbers to intervals. And vice-versa.
 
