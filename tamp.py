@@ -7,7 +7,7 @@ Usage:
     tamp.py [options]
 
 Options:
-    -d <sep>    One character interval separator.    [default: -]
+    -d <sep>    One character interval delimiter.    [default: -]
 
 Examples:
     tamp.py < vlan.csv > addr.csv
