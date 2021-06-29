@@ -9,11 +9,12 @@ Use these tools for manual manipulation and for simple scripting. Do not use for
 - ``iton.py`` Convert IPv4 to decimal. And vice-versa. Also works on intervals.
 - ``cidr.py`` Convert a cidr network to an address interval. And vice-versa.
 - ``turn.py`` Turn a data table into its transpose or into vectors.
+- ``norm.sh`` Normalize a list of of cidr, intervals, addresses.
 
 Example: list unique IP addresses from a set of network ranges and intervals.
 
-``cidr.py --range < test/example.01 | iton.py | tamp.py | sort -u | iton.py``
+``cidr.py -i < test/example.01 | iton.py | tamp.py | sort -u | iton.py``
 
-Example: normalize a given set of network ranges by correctly aligning the ranges, joinning consecutive ranges and removing doublons.
+Example: a bash script using the tools to normalize a list of networks.
 
-``cidr.py --range < test/example.02 | iton.py | tamp.py | sort -u | tamp.py | iton.py | cidr.py``
+``norm.sh test/examples.01``
