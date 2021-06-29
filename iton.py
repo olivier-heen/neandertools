@@ -7,7 +7,7 @@ Usage:
     iton.py [options] [ITEM]
 
 Options:
-    -d <sep>    One character interval separator.    [default: -]
+    -d <sep>    One character interval delimiter.    [default: -]
     --addr      Just convert decimal to addresse.
     --numb      Just convert addresse to decimal.
 
