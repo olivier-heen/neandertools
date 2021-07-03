@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # ##############################################################v##############
-'''Convert successive numbers to intervals. And vice-versa.
+'''
+Convert successive numbers to intervals. And vice-versa.
 
 Usage:
     tamp.py [options]
