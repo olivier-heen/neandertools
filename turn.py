@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # ##############################################################^##############
-'''Turn a data table into its transpose or into vectors.
+'''
+Turn a data table into its transpose or into vectors.
 
 Usage:
     turn.py [-1 | -2 | -3 | -4] [<file>]
