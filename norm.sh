@@ -10,13 +10,13 @@ FILE="${1}"
 [[ ! -f "${FILE}" ]] && echo "${HELP}" && exit 1
 
 (
-./cidr.py -i	|\
-./iton.py	|\
-./tamp.py	|\
+cidr.py -i	|\
+iton.py	|\
+tamp.py	|\
 sort -un	|\
-./tamp.py	|\
-./iton.py	|\
-./cidr.py	|\
+tamp.py	|\
+iton.py	|\
+cidr.py	|\
 sort -uV
 )	<\
 "${FILE}"
