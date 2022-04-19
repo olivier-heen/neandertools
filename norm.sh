@@ -17,6 +17,7 @@ sort -un	|\
 tamp.py	|\
 iton.py	|\
 cidr.py	|\
+cidr.py -c	|\
 sort -uV
 )	<\
 "${FILE}"
