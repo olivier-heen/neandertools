@@ -1,12 +1,12 @@
 #!/bin/bash
 # ##############################################################v###############
-HELP="
+help="
 Usage   norm.sh <FILE>
 FILE    List of cidr, intervals, addresses. Can be stdin.
 Result  Equivalent list of aligned cidr, merged and deduplicated.
 "
 
-[[ "${1}" == "-h" || "${1}" == "--help" ]] && echo "${HELP}" && exit 1
+[[ "${1}" == "-h" || "${1}" == "--help" ]] && echo "${help}" && exit 1
 file=${1:--}
 
 cat "${file}"	|\
