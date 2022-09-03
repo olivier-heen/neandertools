@@ -2,14 +2,14 @@
 # ##############################################################v###############
 HELP="
 Usage   norm.sh <FILE>
-FILE    List of cidr, intervals, addresses.
+FILE    List of cidr, intervals, addresses. Can be stdin.
 Result  Equivalent list of aligned cidr, merged and deduplicated.
 "
 
-FILE="${1}"
-[[ ! -f "${FILE}" ]] && echo "${HELP}" && exit 1
+[[ "${1}" == "-h" || "${1}" == "--help" ]] && echo "${HELP}" && exit 1
+file=${1:--}
 
-(
+cat "${file}"	|\
 cidr.py -i	|\
 iton.py	|\
 tamp.py	|\
@@ -19,5 +19,3 @@ iton.py	|\
 cidr.py	|\
 cidr.py -c	|\
 sort -uV
-)	<\
-"${FILE}"
