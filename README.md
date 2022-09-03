@@ -1,16 +1,14 @@
 # Neandertools
-Old-school tools to ease manipulation of network data in scripts.
+Old-school tools to ease the manipulation of network data (adresses, ranges, lists).
 
-The tools are filters meant to be piped one after the other. They work both ways simultaneosly. The lines containing exactly one correct input are transformed, the other lines rmain unchanged.
-
-Use these tools for manual manipulation and for simple scripting. Do not use for automated processinc with possibly adversarial input.
+Most tools are filters and format converters. For instance cidr.py converts cidr to interval and interval to cidr. The lines containing one single correct entry are converted. The other lines are left as is. These tools are made for manual manipulation or simple scripting. Do not use for automated processing with possibly adversarial input.
 
 # Tools
-- ``tamp.py`` Convert successive numbers to intervals. And vice-versa.
+- ``tamp.py`` Convert list of numbers to intervals. And vice-versa.
 - ``iton.py`` Convert IPv4 to decimal. And vice-versa. Also works on intervals.
 - ``cidr.py`` Convert a cidr network to an address interval. And vice-versa.
 - ``turn.py`` Turn a data table into its transpose or into vectors.
-- ``norm.sh`` Normalize a list of of cidr, intervals, addresses.
+- ``norm.sh`` Normalize a mix of cidr intervals and addresses to canonical cidr.
 
 # Examples
 Example: list unique IP addresses from a set of network ranges and intervals.
@@ -19,4 +17,4 @@ Example: list unique IP addresses from a set of network ranges and intervals.
 
 Example: a bash script using the tools to normalize a list of networks.
 
-``norm.sh test/examples.01``
+``norm.sh test/example.01``
