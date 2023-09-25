@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 # ##############################################################v###############
 '''
-Convert IPv4 to decimal. And vice-versa. Also works on intervals.
+Convert IPv4 to number. And vice-versa. Also works on intervals.
 
 Usage:
     iton.py [options] [ITEM]
 
 Options:
     -d <sep>    One character interval delimiter.    [default: -]
-    --addr      Just convert decimal to addresse.
-    --numb      Just convert addresse to decimal.
+    --addr      Just convert number to addresse.
+    --numb      Just convert addresse to number.
 
 Example:
     iton.py 93.184.216.34
@@ -61,7 +61,7 @@ def conv(line):
                 addr0 = addr(numb0)
                 return str(numb0 if NUMB else addr0)
 
-            except ValueError:                                  # Not decimal
+            except ValueError:                                  # Not a number
                 return line                                     # Leave as is
 
 
