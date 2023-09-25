@@ -9,6 +9,7 @@ Most tools are filters and format converters. For instance cidr.py converts cidr
 - ``cidr.py`` Convert a cidr network to an address interval. And vice-versa.
 - ``turn.py`` Turn a data table into its transpose or into vectors.
 - ``norm.sh`` Normalize a mix of cidr intervals and addresses to canonical cidr.
+- ``cidrcan.sh`` Find the smallest CIDR range containing an IPv4 address interval.
 
 # Examples
 Example: list unique IP addresses from a set of network ranges and intervals.
