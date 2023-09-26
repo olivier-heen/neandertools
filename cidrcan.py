@@ -31,8 +31,8 @@ def cidrcan(mini, maxi):
         elif mini >= half:                                      # Go upper halt
             init = half
         else:                                                   # Split no more
-            return cidr(ntoi(init), ntoi(stop))
-    return cidr(ntoi(init), ntoi(stop))                         # /32 range
+            break
+    return cidr(ntoi(init), ntoi(stop))                         # break or /32
 
 
 # ##############################################################v###############
@@ -45,7 +45,7 @@ if __name__ == '__main__':
         print(next(cidrcan(MINI, MAXI)))                        # next for 1st
 
     except (ValueError, TypeError):
-        print('MINI and MAXI must be valid IPv4 addresses.')
+        print('MINI and MAXI must be IPv4 addresses in dot notation.')
 
 
 # ##############################################################v##############
