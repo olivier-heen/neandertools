@@ -13,29 +13,26 @@ Examples:
 '''
 # ##############################################################v##############
 
-from ipaddress import summarize_address_range as cidr     	# To CIDR
-from ipaddress import ip_address as iton     		# IP to Number
-from ipaddress import IPv4Address as ntoi     		# Number to IP
-from docopt import docopt as args     		# Command line
+from ipaddress import summarize_address_range as cidr           # To CIDR
+from ipaddress import ip_address as iton                        # IP to Number
+from ipaddress import IPv4Address as ntoi                       # Number to IP
+from docopt import docopt as args                               # Command line
 
 
 def cidrcan(mini, maxi):
     '''Return the smallest CIDR range that encolses mini and maxi.'''
     if mini > maxi:                                             # Swap
         return cidrcan(maxi, mini)
-    if mini == maxi:                                            # /32 range
-        return list(cidr(ntoi(mini), ntoi(maxi)))[0]
-    if mini < maxi:                                             # Dichotomy
-        init, stop = 0, 2**32-1
-        while init < stop:                                      # Derecursived
-            half = (init + stop + 1) // 2
-            if maxi < half:                                     # Go lower half
-                stop = half - 1
-            elif mini > half:                                   # Go upper halt
-                init = half
-            else:                                               # Split no more
-                return list(cidr(ntoi(init), ntoi(stop)))[0]
-    return None
+    init, stop = 0, 2**32-1
+    while init < stop:                                          # Derecursived
+        half = (init + stop + 1) // 2
+        if maxi < half:                                         # Go lower half
+            stop = half - 1
+        elif mini >= half:                                      # Go upper halt
+            init = half
+        else:                                                   # Split no more
+            return cidr(ntoi(init), ntoi(stop))
+    return cidr(ntoi(init), ntoi(stop))                         # /32 range
 
 
 # ##############################################################v###############
@@ -45,9 +42,7 @@ if __name__ == '__main__':
     try:
         MINI = int(iton(ARGS['MINI']))
         MAXI = int(iton(ARGS['MAXI']))
-
-        # print(list(cidrcan(MINI, MAXI))[0])
-        print(cidrcan(MINI, MAXI))
+        print(next(cidrcan(MINI, MAXI)))                        # next for 1st
 
     except (ValueError, TypeError):
         print('MINI and MAXI must be valid IPv4 addresses.')
