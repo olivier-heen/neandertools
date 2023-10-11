@@ -12,6 +12,7 @@ Or maybe you just want to answer simple questions about IPv4 networks, such as:
 - ``iton.py`` Convert IPv4 to decimal. And vice-versa. Also works on intervals.
 - ``cidr.py`` Convert a cidr network to an address interval. And vice-versa.
 - ``turn.py`` Turn a data table into its transpose or into vectors.
+- ``addr.sh`` Enumerate addresses from a mix of cidr intervals and addresses.
 - ``norm.sh`` Normalize a mix of cidr intervals and addresses to canonical cidr.
 - ``cidrcan.py`` Find the smallest CIDR range containing an IPv4 address interval.
 
